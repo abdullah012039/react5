@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import useTodos from './useTodos';  // Ensure this path is correct
+import useTodos from './useTodos';  
 import { v4 as uuidv4 } from 'uuid';
 import style from './TodoPage.module.css';
 
@@ -9,13 +9,10 @@ const TodoPage = () => {
     const [index2, setIndex] = useState(0);
     const [done, setDone] = useState([]);
 
-    // Hook usage
     const { todos2, loading, error, setTodos } = useTodos();
 
-    // Create a ref for the input field
     const inputRef = useRef(null);
 
-    // Focus the input field on component mount
     useEffect(() => {
         if (inputRef.current) {
             inputRef.current.focus();
